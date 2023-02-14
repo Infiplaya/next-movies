@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { Montserrat } from "@next/font/google";
+import { Sidebar } from "./Sidebar";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -19,7 +20,12 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className="bg-slate-900 text-slate-100">
+        <section className="flex gap-5">
+          <Sidebar />
+          {children}
+        </section>
+      </body>
     </html>
   );
 }
